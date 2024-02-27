@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Artists</title>
+</head>
+<body>
+    <header class="art">
+        <div class="art-logo">
+            <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/> </svg> Return to Artist</a></div>
+   </header>
+    <div class="parent">
+        <div class="container">
+            <div class="box img">
+                <img src="{{.Image}}">
+                <div class="calbum">
+                    <br>
+                    <p>Création : {{.CreationDate}}</p>&nbsp<p>1er album : {{.FirstAlbum}}</p>
+                </div>
+            </div>
+            <div class="box member">
+                <ul>
+                    <h4>MEMBERS </h4>
+                    {{range $member := .Members}}
+                    <li>{{$member}}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="box location">
+                <ul>
+                    <h4>LOCATIONS </h4>
+                    {{range $loc := .Locations}}
+                    <li>{{$loc}}</li>
+                    {{ end }}
+                </ul>
+            </div>                                                                                        
+            <div class="box concert">
+                <ul>
+                    <h4>ConcertDates </h4>
+                    {{range $conc := .ConcertDates}}
+                    <li>{{$conc}}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="box other">
+                <ul>
+                    <h4>RELATIONS : </h4>
+                    {{ range $key, $value := .Relations }}
+                    <li class="li">{{$key}}: {{range $value}} <br> {{.}}. {{end}}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+        <br>
+
+    </div>
+    </body>
+</html>

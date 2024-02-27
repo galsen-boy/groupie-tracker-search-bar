@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Groupie Tracker</title>
+</head>
+<body>
+        <header class="header">
+            <div class="nav">
+                <div class="logo">Groupie &nbsp;Tracker &nbsp;Search</div>
+                <div class="searchbarre"> 
+                    <!-- <div class="svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1
+                         0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                    </div> -->
+                    <form action="/search" method="POST">
+                         <input list="browsers" name="search" id="browser" placeholder="Search" required> <button type="submit">Search</button>
+                            <datalist id="browsers">
+                                {{range .}}
+                                <option value="{{.Name}}"></option>
+                                    <option value="{{.CreationDate}}">{{.CreationDate}} - creationdate</option>
+                                    <option value="{{.FirstAlbum}}">{{.CreationDate}} - firstalbum</option>
+                                    {{range .Members}}
+                                    <option value="{{.}}">{{.}} - member</option>
+                                    {{end}}
+                                    {{range .Locations}}
+                                    <option value={{.}}>{{.}} - location</option>
+                                    {{end}}
+                                {{end}}
+                            </datalist>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="main-section">
+            <h1 class="text-artists">Artists In Our Groupie Tracker Website</h1>
+        </div>
+    <div class="artist-image">
+        {{range .}}
+        <div class="image" >
+            <a href="/artist?id={{.ID}}">
+                <img src="{{.Image}}"class="image-groupe">
+                <p class="name" href=""><br>{{ .Name }}</p>
+            </a>
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>

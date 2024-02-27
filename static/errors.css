@@ -1,0 +1,41 @@
+body{
+    background-image: url('https://cdn.pixabay.com/photo/2020/07/09/13/36/abstract-5387368_960_720.jpg');
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .centered {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    margin-bottom: 50px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    color: rgb(43, 42, 42);
+  }
+  button {
+    border-radius: 9px;
+    font-size: 27px;
+    background-color: rgba(224, 58, 185, 0.826);
+    color: white;
+    cursor: pointer;
+  }
+  a {
+    width: 7%;
+    padding: 10px;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    background-color: rgb(65, 159, 226);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border-radius: 3px;
+  }
